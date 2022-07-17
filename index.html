@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PROFILE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+            font-size: 24px;
+            /*background-color: lightgray;*/
+        }
+        h1, h2, h3 {
+            font-family: Merriweather, serif;
+        }
+        h1 {
+            font-size: 100px;
+            display: flex;
+            align-items: center;
+        }
+        h2 {
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+        }
+        h3 {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+        hr {
+            background-color: rgba(0, 0, 0, .15);
+            height: 1px;
+            border: 0;
+        }
+        nav {
+            width: 300px;
+            height: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            overflow: hidden;
+            /*border: 2px solid yellow;*/
+            background: #fff;
+            box-shadow: 0 3px 10px -2px rgba(0,0,0,.5);
+            border: 1px solid rgba(0,0,0,.1);
+        }
+        nav img {
+            border-radius: 5px;
+            /*outline: 10px solid rgba(255, 255, 255, 0.2);*/
+            box-shadow: 3px 6px 20px -2px rgba(0,0,0,1);
+            margin-top: 50px;
+            margin-bottom: 20px}
+        nav ul {
+            list-style-type: none;
+            /*border: 2px solid blue;*/
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav li {
+            border-bottom: 1px solid rgba(0,0,0,.1);;
+        }
+        nav a {
+            display: flex;
+            text-decoration: none;
+            /*border: 2px solid red;*/
+            padding: 10px;
+            color: #222;
+            align-items: center;
+            justify-content: left;
+        }
+        nav i {
+            /*border: 2px solid red;*/
+            margin-right: 2px;
+        }
+        nav a:hover {
+            background-color: rgba(0,0,0,.15);;
+            cursor: pointer;
+        }
+        nav::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        main {
+            margin-left: 300px;
+            /*border: 2px solid goldenrod;*/
+            width: calc(100% - 300px);
+            /*height: auto;*/
+        }
+        section {
+            padding: 1px 100px;
+        }
+        section p {
+            /*border: 2px solid red;*/
+            text-align: justify;
+            margin-left: 1em;
+            text-indent: 1em;
+            line-height: 1.5em;
+        }
+        section ul {
+            list-style: none;
+        }
+        section li::before {
+            content: "\2022";
+            color: rgba(0,0,0,.15);
+            font-weight: bold;
+            display: inline-block;
+            font-size: 1.5em;
+            width: 1em;
+            margin-left: -1em;
+        }
+        section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        section#thongtin img{
+            display: none;
+            float: right;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px -2px rgba(0,0,0,1);
+        }
+        table {
+            margin-left: 1em;
+        }
+        table td {
+            padding-top: 20px;
+        }
+        table td.col1 {
+            width: 220px;
+        }
+        table i {
+            margin-left: 10px;
+            color: rgba(0,0,0,.3);
+        }
+        div.percent {
+            display: flex;
+            /*border: 2px solid blue;*/
+            background-color: white;
+            width: 350px;
+            border-radius: 3px;
+            border: 1px solid rgba(0,0,0,.3);
+        }
+        div.percent div {
+            background-color: rgba(0,0,0,.3);
+            height: 25px;
+            border-radius: 1px;
+        }
+        div.real1 {
+            width: 330px;
+        }
+        div.real2 {
+            width: 300px;
+        }
+        div.real3 {
+            width: 350px;
+        }
+        div.real4 {
+            width: 340px;
+        }
+        div.mobile {
+            /*border: 2px solid blue;*/
+            background-color: #fff;
+            display: none;
+            padding: 5px;
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            box-shadow: 0 3px 5px -2px rgba(0,0,0,.3);
+        }
+        /*div.mobile div.contact {*/
+        /*    !*border: 2px solid   blue;*!*/
+        /*    float: left;*/
+        /*}*/
+        div.mobile div.contact i{
+            padding: 0;
+            margin-right: 5px;
+        }
+        div.mobile i {
+            display: inline-block;
+            padding: 10px;
+            /*border: 2px solid red;*/
+            float: right;
+            height: 100%;
+            border-radius: 3px;
+        }
+        div.mobile i:hover {
+            background-color: rgba(0,0,0,.15);;
+            cursor: pointer;
+        }
+        div.contact i{
+            /*border: 2px solid red;*/
+            font-size: 4em;
+            color: #4a5057;
+            margin-right: 20px;
+        }
+         section i[class="material-icons"] {
+            font-size: 40px;
+            /*border: 2px solid red;*/
+            margin-right: 10px;
+        }
+        i[class$=fa-youtube-square]:hover{
+            color: red;
+        }
+        i[class$=fa-facebook-square]:hover{
+            color: #3f5593;
+        }
+        i[class$=fa-twitter-square]:hover{
+            color: #409bea;
+        }
+        i[class$=fa-instagram]:hover{
+            color: #3cacaf;
+        }
+        i[class$=material-icons]{
+            border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        @media screen and (max-width: 900px) {
+            div.mobile{
+                display: block;
+                float: left;
+            }
+            div.menu{
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+            nav a {
+                padding: 5px;
+            }
+            nav {
+                display: none;
+                width: 100%;
+                height: auto;
+                text-align: left;
+                position: relative;
+            }
+            nav img {
+                display: none;
+            }
+            nav li {
+                /*display: block;*/
+                float: top;
+                padding: 0;
+            }
+            main {
+                margin-left: 0;
+                margin-top: 50px;
+                width: 100%;
+            }
+            div.menu:hover nav {
+                float: left;
+                display: block;
+            }
+            section#thongtin img{
+                display: inline-block;
+            }
+            section {
+                padding: 1px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="mobile">
+            <i class="material-icons">apps</i>
+        </div>
+        <nav>
+            <img src="images/profile.jpg" alt="" width="150px">
+            <ul>
+                <li><a href="#thongtin"><i class="material-icons">account_box</i>THÔNG TIN</a></li>
+                <li><a href="#daotao"><i class="material-icons">school</i>ĐÀO TẠO</a></li>
+                <li><a href="#kinhnghiem"><i class="material-icons">assignment</i>KINH NGHIỆM</a></li>
+                <li><a href="#kynang"><i class="material-icons">accessibility</i>KỸ NĂNG</a></li>
+                <li><a href="#sothich"><i class="material-icons">favorite</i>SỞ THÍCH</a></li>
+                <li><a href="#ngoaingu"><i class="material-icons">language</i>NGOẠI NGỮ</a></li>
+                <li><a href="#tinhoc"><i class="material-icons">computer</i>TIN HỌC</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section id="thongtin">
+            <h1>CHÂU TINH TRÌ</h1>
+            <h2><i class="material-icons">account_box</i>THÔNG TIN</h2><img src="images/photo-1.png" alt="" width="200px">
+            <div class="contact">
+                <a href="https://www.facebook.com/chautinhtrivnfc" target="_blank"><i class='fab fa-facebook-square'></i></a>
+                <a href="https://www.youtube.com/user/MePhimHai" target="_blank"><i class='fab fa-youtube-square'></i></a>
+                <a href="https://www.instagram.com/stephenchowvnfc/" target="_blank"><i class='fab fa-instagram'></i></a>
+                <a href="https://mobile.twitter.com/" target="_blank"><i class='fab fa-twitter-square'></i></a>
+            </div>
+            <h3>Đạo diễn, nhà biên kịch, nhà sản xuất</h3>
+            <ul>
+                <li>Phim hay nhất cho phim Tuyệt đỉnh Kungfu</li>
+                <li>Đạo diễn xuất sắc nhất cho phim Đội bóng Thiếu Lâm</li>
+                <li>Diễn viên nam chính xuất sắc nhất cho vai A Tinh trong Đội bóng Thiếu Lâm</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="daotao">
+            <h2><i class="material-icons">school</i>ĐÀO TẠO</h2>
+            <p>Tốt nghiệp lớp diễn viên của hãng TVB năm 1982, Châu Tinh Trì gia nhập làng giải trí với vai trò MC và nhiều vai diễn phụ, thậm chí ông còn phải quỳ gối xin đạo diễn để được diễn lại vai của mình, nhiều người còn cho rằng ông không có thực lực và tương lai, bộ phim Vua hài kịch năm 1999 là tiếng lòng của ông về những trải nghiệm nghề trong thời gian này. Dù hơn 5 năm lận đận, nhạt nhòa vai phụ nhưng diễn xuất của Châu Tinh Trì được đánh giá cao, ông luôn đạt giải thưởng Kim Mã cho vai phụ xuất sắc nhất, "Diễn viên phụ xuất sắc nhất Hồng Kông", "Gương mặt mới xuất sắc nhất Hồng Kông", ...</p>
+        </section>
+        <hr>
+        <section id="kinhnghiem">
+            <h3><i class="material-icons">assignment</i>KINH NGHIỆM</h3>
+            <p>Từ năm 1994, Châu đã bắt đầu tự viết kịch bản và đạo diễn cho một số bộ phim. Bộ phim Đội bóng Thiếu Lâm đã phá vỡ kỷ lục doanh thu tại Hồng Kông năm 2001, kỷ lục này lại tiếp tục bị vượt qua bởi bộ phim tiếp theo của Châu là Tuyệt đỉnh Kungfu năm 2004.
+                Năm 2008, sau bộ phim CJ7, Châu tạm ngừng sự nghiệp diễn xuất (nguyên nhân chính được cho chính ông thường thu hút sự chú ý của khán giả quá mức dù cho ông đã chủ đích vào vai phụ) để chuyên tâm vào sự nghiệp đạo diễn.
+                Tháng 7 năm 2006, Châu bắt đầu làm bộ phim mới nhất của ông là CJ7/A Hope (Trường Giang số 7) tại Ninh Ba, Chiết Giang. Có nguồn tin cho rằng đây là bộ phim Trung Quốc có kinh phí cao nhất từ trước đến nay, khoảng 100 triệu Nhân dân tệ (khoảng 13 triệu USD).[3].
+                Năm 2016, Châu Tinh Trì ra mắt công chúng bộ phim Mỹ nhân ngư với vai trò đạo diễn kiêm sản xuất và biên kịch. Bộ phim đạt được thành công lớn về mặt doanh thu (hơn 500 triệu USD) cũng như được lòng phần lớn nhà phê bình nghệ thuật.</p>
+        </section>
+        <hr>
+        <section id="kynang">
+            <h3><i class="material-icons">accessibility</i>KỸ NĂNG</h3>
+            <p>Chính Châu Tinh Trì là người đã khuyên Lương Triều Vĩ tham gia vào ngành công nghiệp giải trí, để rồi sau đó Lương Triều Vĩ thậm chí còn trở nên nổi tiếng trước cả Châu Tinh Trì.
+                Các phim của Châu thường có một vai diễn nhỏ là một người đàn ông xấu xí giả gái vừa chạy vừa ngoáy mũi, vai diễn này luôn do một người bạn của Châu tên là Lý Kiện Nhân (Lee Kin Yan) thủ vai.
+                Châu Tinh Trì rất hâm mộ bộ truyện tranh Nhật Bản Bảy viên ngọc rồng. Do đó, anh không ngần ngại tham gia sản xuất phim Dragonball Evolution của điện ảnh Hoa Kỳ.</p>
+        </section>
+        <hr>
+        <section id="sothich">
+            <h3><i class="material-icons">favorite</i>SỞ THÍCH</h3>
+            <p>Khi còn nhỏ, Châu rất thích Kung fu nhưng phải học võ qua truyền hình vì cha mẹ ông không đủ tiền cho con theo học các lớp chính quy. Sau đó thì ông theo học Vịnh Xuân quyền và trở thành một người hâm mộ diễn viên Lý Tiểu Long. Cho đến tận ngày nay ông vẫn giữ niềm đam mê này và những bộ phim của Châu Tinh Trì thường có những cảnh gợi nhớ đến những tác phẩm Lý Tiểu Long tham gia diễn xuất. Cụ thể trong bộ phim Tuyệt đỉnh Kungfu của mình, Châu Tinh Trì đã mượn chiếc quần của Lý Tiểu Long từ người con gái của họ Lý. Nhiều động tác võ thuật và phong cách trình diễn được Châu Tinh Trì thể hiện lấy cảm hứng từ Lý Tiểu Long.</p>
+        </section>
+        <hr>
+        <section id="ngoaingu">
+            <h3><i class="material-icons">language</i>NGOẠI NGỮ</h3>
+            <h3>Tiếng Anh</h3>
+            <table>
+                <tr>
+                    <td class="col1">Nghe</td>
+                    <td><div class="percent"><div class="real1"></div></div></td>
+                </tr>
+                <tr>
+                    <td class="col1">Nói</td>
+                    <td><div class="percent"><div class="real2"></div></div></td>
+                </tr>
+                <tr>
+                    <td class="col1">Đọc</td>
+                    <td><div class="percent"><div class="real3"></div></div></td>
+                </tr>
+                <tr>
+                    <td class="col1">Viết</td>
+                    <td><div class="percent"><div class="real4"></div></div></td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section id="tinhoc">
+            <h3><i class="material-icons">computer</i>TIN HỌC</h3>
+            <table>
+                <tr>
+                    <td class="col1">MS Word</td>
+                    <td><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></td>
+                </tr>
+                <tr>
+                    <td class="col1">MS Excell</td>
+                    <td><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i></td>
+                </tr>
+                <tr>
+                    <td class="col1">MS Power Point</td>
+                    <td><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i></td>
+                </tr>
+                <tr>
+                    <td class="col1">MS Outlook</td>
+                    <td><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i></td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+    </main>
+</body>
+</html>
